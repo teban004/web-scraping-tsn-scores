@@ -7,6 +7,13 @@ scoresData = requests.get(scoresWebsite)
 
 print("The response from", scoresWebsite, "is", scoresData);
 print()
+#load data into bs4
+soup = BeautifulSoup(scoresData.text, 'html.parser')
+
+#get data simply by looking for each <tr>
+print("Getting data from", scoresWebsite)
+print(soup)
+
 
 TSNwebsite = 'https://www.tsn.ca/'
 #get the data displayed on TSN website
