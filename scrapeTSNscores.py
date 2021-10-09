@@ -20,11 +20,17 @@ if (scoresData.status_code != 200):
     print("The script will stop here.")
     sys.exit()
 
+for div in soup.find('div', {'id': 'mainContentDiv'}):
+    print(div)
+
+
+
+###### NOW ON TSN WEBSITE ######
 TSNwebsite = 'https://www.tsn.ca/'
 #get the data displayed on TSN website
 TSNdata = requests.get(TSNwebsite)
 
-print("The response from", TSNwebsite, "is", TSNdata);
+print("The response from", TSNwebsite, "is", TSNdata)
 
 #load data into bs4
 soup = BeautifulSoup(TSNdata.text, 'html.parser')
